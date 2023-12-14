@@ -2,7 +2,7 @@ import java.io.Console;
 /**
  * The AlterUser class has the creation, updating, and deletion of user information.
  */
-class AlterUser {
+public class AlterUser {
     private UserData user = new UserData();
     private String[] information = new String[6];
 
@@ -36,7 +36,7 @@ class AlterUser {
                             information[i] = user.getId();
                             break;
                         case 3:
-                            System.out.print("Enter phone number (without "+"): ");
+                            System.out.print("Enter phone number (without '+'): ");
                             user.setPhoneNumber(c.readLine());
                             information[i] = user.getPhoneNumber();
                             break;
@@ -83,7 +83,7 @@ class AlterUser {
      *
      * @param lineNumber The line number represents what user to update.
      */
-    public void updateUser(int lineNumber) {
+    public void updateUser(final int lineNumber) {
         AlterUser user = new AlterUser();
         user.createUser();
         FileManager.updateLine(false, lineNumber, user.getInformation());
@@ -93,7 +93,7 @@ class AlterUser {
      *
      * @param lineNumber The line number represents the user to delete.
      */
-    public void deleteUser(int lineNumber) {
+    public void deleteUser(final int lineNumber) {
         FileManager.updateLine(true, lineNumber, null);
     }
 }

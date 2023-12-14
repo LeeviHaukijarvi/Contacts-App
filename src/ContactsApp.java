@@ -2,7 +2,9 @@ import java.io.Console;
 
 
 /**
- * The ContactsApp class represents a simple console application for managing contacts.
+ * The ContactsApp class represents a simple console application
+ * for managing contacts.
+ *
  * It allows users to create, view, update, and remove contacts.
  *
  * @author Leevi Haukijärvi
@@ -11,7 +13,6 @@ import java.io.Console;
 
 public class ContactsApp {
     private static Console c = System.console();
-
     /**
      * The main method of the ContactsApp class.
      * It serves as the entry point for the ContactsApp application.
@@ -25,8 +26,8 @@ public class ContactsApp {
         System.out.println("Welcome to Contacts App");
 
         while (!exit) {
-            System.out.println("1: Create Contact\n" +
-                    "2: View Contacts\n3: Update Contact\n4: Remove Contact\n5: Exit");
+            System.out.println("1: Create Contact\n"
+            + "2: View Contacts\n3: Update Contact\n4: Remove Contact\n5: Exit");
 
             System.out.print("What do you want to do (number)?: ");
 
@@ -38,13 +39,15 @@ public class ContactsApp {
                         System.out.println("\nUser created successfully!\n");
                         break;
                     case 2:
-                        System.out.println("\nContacts:\n" + FileManager.readFromFile(0));
+                        System.out.println("\nContacts:\n"
+                        + FileManager.readFromFile(0));
                         System.out.print("Press enter to continue \n");
                         c.readLine();
                         break;
                     case 3:
                         int userNumberToUpdate = 0;
-                        System.out.println("\nContacts:\n" + FileManager.readFromFile(0));
+                        System.out.println("\nContacts:\n"
+                        + FileManager.readFromFile(0));
                         System.out.print("What user do you want to update (number)?: ");
                         userNumberToUpdate = validateUserNumbers(1, 10);
                         createInstance.updateUser(userNumberToUpdate);
@@ -52,7 +55,8 @@ public class ContactsApp {
                         break;
                     case 4:
                         int userNumberToDelete = 0;
-                        System.out.println("\nContacts:\n" + FileManager.readFromFile(0));
+                        System.out.println("\nContacts:\n"
+                        + FileManager.readFromFile(0));
                         System.out.print("What user do you want to delete (number)?: ");
                         userNumberToDelete = validateUserNumbers(1, 10);
                         createInstance.deleteUser(userNumberToDelete);
@@ -77,7 +81,7 @@ public class ContactsApp {
      * @param max The maximum allowed value.
      * @return The validated user input.
      */
-    public static int validateUserNumbers(int min, int max) {
+    public static int validateUserNumbers(final int min, final int max) {
         int validatedNumber = 0;
         boolean correctNumber = false;
         while (!correctNumber) {
@@ -89,7 +93,8 @@ public class ContactsApp {
                     correctNumber = true;
                 }
             } catch (IllegalArgumentException e) {
-                System.out.println("Must be a number between " + min + " and " + max + "!");
+                System.out.println("Must be a number between "
+                + min + " and " + max + "!");
             }
         }
         return validatedNumber;
