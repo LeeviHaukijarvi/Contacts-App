@@ -44,7 +44,7 @@ public class AlterUser {
                             System.out.print("Enter address (Press Enter to skip): ");
                             String addressInput = c.readLine();
                             if (addressInput.isEmpty()) {
-                                information[i] = "null";
+                                information[i] = "Not given";
                             } else {
                                 user.setAddress(addressInput);
                                 information[i] = user.getAddress();
@@ -54,7 +54,7 @@ public class AlterUser {
                             System.out.print("Enter email (Press Enter to skip): ");
                             String emailInput = c.readLine();
                             if (emailInput.isEmpty()) {
-                                information[i] = "null";
+                                information[i] = "Not given";
                             } else {
                                 user.setEmail(emailInput);
                                 information[i] = user.getEmail();
