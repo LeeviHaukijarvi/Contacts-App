@@ -42,7 +42,7 @@ App is ready to use but has some known bugs. User validation should be more accu
 ## Validation Rules
 
 - Input validation is applied to ensure the correctness of user-provided information.
-- Various checks are in place for each type of user data, such as name, ID, phone number, address, and email.
+- Various checks are in place for each type of user data, such as name, ID, phone number, address and email.
 
 ## File Operations
 
